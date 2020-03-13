@@ -25,23 +25,26 @@ SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strtrim.c ft_tolower.c ft_toupper.c ft_lstiter.c ft_lstmap.c \
 		ft_lstadd.c ft_lstdel.c ft_iswspace.c ft_strndup.c ft_strcdup.c \
 		ft_strconchr.c ft_strconchrlen.c ft_strcondup.c ft_strconchrrlen.c \
-		ft_strchrlen.c ft_strlcpy.c ft_strnjoin.c ft_strcjoin.c
+		ft_strchrlen.c ft_strlcpy.c ft_strnjoin.c ft_strcjoin.c get_next_line.c
 FLAGS = -Wall -Wextra -Werror
-OBJS = $(SRC:.c=.o)
+SRCDIR = src/
+OBJ = $(SRC:.c=.o)
+OBJDIR = obj/
 INC = includes
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-%.o: %.c
-	gcc $(FLAGS) -c $< -I $(INC)
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	@[ -d obj ] || mkdir obj
+	@gcc $(FLAGS) -c $< -I $(INC) -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(addprefix $(OBJDIR), $(OBJ))
 	ar rcs $(NAME) $?
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -rf $(NAME)

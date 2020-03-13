@@ -15,9 +15,7 @@
 char		*ft_strndup(const char *s, int n)
 {
 	char	*copy;
-	int		i;
 
-	i = 0;
 	if (!(copy = malloc(n + 1)))
 		return (0);
 	ft_strncpy(copy, s, n);
