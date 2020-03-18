@@ -19,8 +19,8 @@ int			ft_strcdup(char **dst, const char *src, int c, int i)
 	else
 	{
 		if (!(*dst = (char *)malloc(i + 1)))
-			return (0);
+			return (-1);
 		(*dst)[i] = 0;
-		return (1);
+		return (*src == c * i);
 	}
 }

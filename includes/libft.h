@@ -23,6 +23,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				*ft_append(void *addr, size_t new_size, size_t mem_size);
+int					*ft_strchrn(const char *s, int c);
 int					ft_strcjoin(char **dst, char *src, char stop, int count);
 char				*ft_strconchr(const char *s, int (*f)(int),
 							int truth_value);
