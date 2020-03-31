@@ -12,5 +12,5 @@
 
 int		ft_strchrn(const char *s, int c)
 {
-	return (!*s ? 0 : *s == (char)c + ft_strchrn(s + 1, c));
+	return (!*s ? 0 : (*s == (char)c) + ft_strchrn(s + 1, c));
 }

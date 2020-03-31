@@ -23,8 +23,9 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_strpush(char ***strarr_ptr, char *newstr, size_t i);
 void				*ft_append(void *addr, size_t new_size, size_t mem_size);
-int					*ft_strchrn(const char *s, int c);
+int					ft_strchrn(const char *s, int c);
 int					ft_strcjoin(char **dst, char *src, char stop, int count);
 char				*ft_strconchr(const char *s, int (*f)(int),
 							int truth_value);
@@ -37,7 +38,7 @@ char				*ft_strcondup(const char *src, int (*f)(int),
 char				*ft_strndup(const char *s, int n);
 int					ft_iswspace(int c);
 int					ft_atoi(const char *str);
-void				ft_bzero(void *str, size_t n);
+void				ft_bzero(void *addr, size_t n);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
