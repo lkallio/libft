@@ -101,5 +101,6 @@ int					ft_toupper(int c);
 int					ft_strcdup(char **dst, const char *src, int c, int i);
 int					ft_strchrlen(const char *s, int c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int					ft_strstrjoin(char **dst, char *src, char *stop, int count);
 
 #endif
