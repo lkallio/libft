@@ -1,16 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchrn.c                                       :+:      :+:    :+:   */
+/*   pf_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/13 14:53:22 by lkallio           #+#    #+#             */
-/*   Updated: 2020/11/13 14:53:24 by lkallio          ###   ########.fr       */
+/*   Created: 2020/01/15 12:50:50 by lkallio           #+#    #+#             */
+/*   Updated: 2020/11/13 17:50:34 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strchrn(const char *s, int c)
+#include "ft_printf.h"
+
+int		ft_nstrchr(const char *pool, char c)
 {
-	return (!*s ? 0 : (*s == (char)c) + ft_strchrn(s + 1, c));
+	int		i;
+
+	i = -1;
+	while (pool[++i])
+		if (pool[i] == c)
+			return (i);
+	return (-1);
+}
+
+int		pf_atoi(t_pf *pf, int *i, int ret)
+{
+	if (pf->format[(*i)] >= '0' && pf->format[(*i)] <= '9')
+	{
+		ret = ret * 10 + pf->format[(*i)++] - '0';
+		return (pf_atoi(pf, i, ret));
+	}
+	return (ret);
 }

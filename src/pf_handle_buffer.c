@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcdup.c                                       :+:      :+:    :+:   */
+/*   handle_buffer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 13:49:43 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/31 14:16:05 by lkallio          ###   ########.fr       */
+/*   Created: 2020/02/14 12:39:07 by lkallio           #+#    #+#             */
+/*   Updated: 2020/02/14 12:39:09 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int			ft_strcdup(char **dst, const char *src, int c, int i)
+void	handle_buffer(t_pf *pf, char ins)
 {
-	if (*src != c && *src)
-		return (ft_strcdup(dst, src + 1, c, i + 1) && ((*dst)[i] = *src));
-	else
+	if (pf->buf_idx == 1024)
 	{
-		if (!(*dst = (char *)malloc(i + 1)))
-			return (-1);
-		(*dst)[i] = 0;
-		return (*src == c);
+		write(1, pf->buf, 1024);
+		pf->n += 1024;
+		pf->buf_idx = 0;
 	}
+	pf->buf[(pf->buf_idx)++] = ins;
+}
+
+void	feedbuf_str(t_pf *pf, char *str, int len)
+{
+	while (*str && len--)
+		handle_buffer(pf, *str++);
+}
+
+void	feedbuf_nchar(t_pf *pf, char ins, int n)
+{
+	if (n < 0)
+		return ;
+	while (n--)
+		handle_buffer(pf, ins);
 }

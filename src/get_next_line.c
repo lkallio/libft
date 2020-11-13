@@ -21,7 +21,7 @@ static int	gnl_join(char **line, char *portion)
 		if (!(*line = ft_strnew(0)))
 			return (-1);
 	temp = *line;
-	ret = ft_strstrjoin(line, portion, "\n\r", 0);
+	ret = ft_strcjoin(line, portion, '\n', 0);
 	free(temp);
 	return (ret);
 }

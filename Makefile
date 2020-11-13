@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lkallio <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 13:09:35 by lkallio           #+#    #+#              #
-#    Updated: 2019/11/12 18:14:53 by lkallio          ###   ########.fr        #
+#    Updated: 2020/11/13 17:49:40 by lkallio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_realloc.c \
 		ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstdelone.c ft_lstnew.c \
 		ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 		ft_memdel.c ft_memmove.c ft_memrchr.c ft_memset.c ft_putchar.c \
@@ -25,7 +25,9 @@ SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strtrim.c ft_tolower.c ft_toupper.c ft_lstiter.c ft_lstmap.c \
 		ft_lstadd.c ft_lstdel.c ft_iswspace.c ft_strndup.c ft_strcdup.c \
 		ft_strconchr.c ft_strconchrlen.c ft_strcondup.c ft_strconchrrlen.c \
-		ft_strchrlen.c ft_strlcpy.c ft_strnjoin.c ft_strcjoin.c get_next_line.c
+		ft_strchrlen.c ft_strlcpy.c ft_strnjoin.c ft_strcjoin.c get_next_line.c \
+		pf_dbl_data.c pf_ft_printf.c pf_handle_buffer.c pf_handle_double.c \
+		pf_handle_ints.c pf_handle_n_str.c pf_utils.c pf_write_double.c pf_write_ints.c
 FLAGS = -Wall -Wextra -Werror
 SRCDIR = src/
 OBJ = $(SRC:.c=.o)
