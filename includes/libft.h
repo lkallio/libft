@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2020/10/27 14:01:17 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/10 13:50:32 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ int					ft_strchrlen(const char *s, int c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strstrjoin(char **dst, char *src, char *stop, int count);
 void				*ft_realloc(void *addr, size_t old_size, size_t size_incr, size_t mem_size);
+char				*ft_strex(char *s, char *p);
 
 #endif
