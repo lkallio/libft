@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/10 13:50:32 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/12 19:28:40 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,20 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_strtol
+{
+	const char		*s;
+	unsigned long	num;
+	unsigned long	cutoff;
+	int				cutlim;
+	int				c;
+	int				sign;
+	int				base;
+}					t_strtol;
+
+# define FT_LONGMAX		((unsigned long)0x7FFFFFFF)
+
 
 int					ft_strpush(char ***strarr_ptr, char *newstr, size_t i);
 void				*ft_append(void *addr, size_t new_size, size_t mem_size);
@@ -103,6 +117,7 @@ int					ft_strchrlen(const char *s, int c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strstrjoin(char **dst, char *src, char *stop, int count);
 void				*ft_realloc(void *addr, size_t old_size, size_t size_incr, size_t mem_size);
-char				*ft_strex(char *s, char *p);
+char				*ft_strex(const char *s, char *p);
+long				ft_strtol(const char *s, char **endptr, int base);
 
 #endif
