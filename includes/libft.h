@@ -6,15 +6,21 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/12 19:28:40 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/18 13:27:18 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <string.h>
+# include <inttypes.h>
+# include <stdlib.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
+# include <sys/errno.h>
 
 typedef struct		s_list
 {

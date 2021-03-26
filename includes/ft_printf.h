@@ -6,18 +6,13 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 12:51:48 by lkallio           #+#    #+#             */
-/*   Updated: 2020/11/13 17:50:41 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/14 20:36:03 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <string.h>
-# include <inttypes.h>
-# include <stdlib.h>
 # include "libft.h"
 
 typedef struct		s_dt

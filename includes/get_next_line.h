@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 16:14:26 by lkallio           #+#    #+#             */
-/*   Updated: 2019/11/15 15:09:15 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/14 20:36:51 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # define HANDLE_MAX 4864
 
 int			get_next_line(const int fd, char **line);
+char		*ft_filetostr(int fd);
 
 #endif
