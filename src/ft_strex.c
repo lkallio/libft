@@ -6,13 +6,13 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:51:26 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/12 20:37:58 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/26 16:10:48 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_rstrex(const char *s, char *p, register int i)
+static char		*ft_rstrex(const char *s, char *p, register int i)
 {
 	static int	ept[2];
 	char		*ret;
@@ -38,7 +38,7 @@ static char	*ft_rstrex(const char *s, char *p, register int i)
 	return (ret);
 }
 
-char	*ft_strex(const char *s, char *p)
+char			*ft_strex(const char *s, char *p)
 {
 	static char	*ret;
 

@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:25:42 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/17 17:48:45 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/26 16:14:28 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char		*ft_rfts(int fd, int i)
 {
-	char 		*buf;
+	char		*buf;
 	char		*ret;
 	ssize_t		bytes_read;
 

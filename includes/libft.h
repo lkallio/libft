@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/18 13:27:18 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/03/26 16:20:25 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct		s_strtol
 }					t_strtol;
 
 # define FT_LONGMAX		((unsigned long)0x7FFFFFFF)
-
 
 int					ft_strpush(char ***strarr_ptr, char *newstr, size_t i);
 void				*ft_append(void *addr, size_t new_size, size_t mem_size);
@@ -122,7 +121,8 @@ int					ft_strcdup(char **dst, const char *src, int c, int i);
 int					ft_strchrlen(const char *s, int c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strstrjoin(char **dst, char *src, char *stop, int count);
-void				*ft_realloc(void *addr, size_t old_size, size_t size_incr, size_t mem_size);
+void				*ft_realloc(void *addr, size_t old_size,
+								size_t size_incr, size_t mem_size);
 char				*ft_strex(const char *s, char *p);
 long				ft_strtol(const char *s, char **endptr, int base);
 

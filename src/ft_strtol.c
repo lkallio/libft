@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtol.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 16:12:24 by lkallio           #+#    #+#             */
+/*   Updated: 2021/03/26 16:13:18 by lkallio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static t_strtol	get_vars(const char *s, int base)
@@ -23,7 +35,7 @@ static t_strtol	get_vars(const char *s, int base)
 	});
 }
 
-long	ft_strtol(const char *s, char **endptr, int base)
+long			ft_strtol(const char *s, char **endptr, int base)
 {
 	register t_strtol	v;
 
@@ -42,6 +54,6 @@ long	ft_strtol(const char *s, char **endptr, int base)
 		v.num = v.num * v.base + v.c;
 	}
 	if (endptr)
-		*endptr = (char *) v.s - 1;
+		*endptr = (char *)v.s - 1;
 	return (v.sign * v.num);
 }
