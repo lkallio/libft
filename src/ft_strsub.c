@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 00:54:16 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/30 11:15:57 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 14:18:56 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*ret;
 
-	if (!(ret = (char *)malloc(len + 1)))
+	ret = (char *)malloc(len + 1);
+	if (!ret)
 		return (0);
 	ret[len] = 0;
 	ft_strncpy(ret, s + start, len);

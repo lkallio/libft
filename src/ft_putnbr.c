@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 02:08:43 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/29 01:50:04 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 13:12:11 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_putnbr(int n)
 	}
 	else
 		ft_putnbr(n / 10);
-	n = n < 0 ? -(n % 10) : n % 10;
+	n = -(n < 0) * (n % 10);
 	ft_putchar(n + '0');
 }

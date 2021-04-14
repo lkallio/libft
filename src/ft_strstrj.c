@@ -6,16 +6,16 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:18:48 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/26 16:19:01 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 14:17:54 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strstrjoin(char **dst, char *src, char *stop, int count)
+int	ft_strstrjoin(char **dst, char *src, char *stop, int count)
 {
-	char		c;
-	int			ret;
+	char	c;
+	int		ret;
 
 	if (**dst)
 	{

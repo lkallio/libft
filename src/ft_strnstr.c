@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 00:54:05 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/30 10:02:45 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 14:12:51 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_nlcmp(const char *hs, const char *nl, size_t n)
 	return (ft_nlcmp(++hs, ++nl, --n));
 }
 
-char		*ft_strnstr(const char *hs, const char *nl, size_t n)
+char	*ft_strnstr(const char *hs, const char *nl, size_t n)
 {
 	if (!*nl)
 		return ((char *)hs);

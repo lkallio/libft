@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 12:51:48 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/14 20:36:03 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 17:10:20 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-typedef struct		s_dt
+typedef struct s_dt
 {
 	int		param;
 	int		width;
@@ -26,7 +26,7 @@ typedef struct		s_dt
 	int		temp;
 }					t_dt;
 
-typedef struct		s_pf
+typedef struct s_pf
 {
 	t_dt			dt;
 	char			buf[1024];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 02:20:56 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/29 02:23:05 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 16:51:22 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *alst;
 	*alst = new;

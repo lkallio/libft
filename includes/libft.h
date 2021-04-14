@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/03/26 16:20:25 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 17:09:56 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 # include "ft_printf.h"
 # include <sys/errno.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_strtol
+typedef struct s_strtol
 {
 	const char		*s;
 	unsigned long	num;
@@ -42,18 +42,22 @@ typedef struct		s_strtol
 
 # define FT_LONGMAX		((unsigned long)0x7FFFFFFF)
 
+char				*ft_strass(char **dst, char *src);
+char				*ft_stern(int true, char *s1, char *s2);
+int					ft_intass(int *ass, int dst);
+int					ft_itrn(int arg, int ret1, int ret2);
 int					ft_strpush(char ***strarr_ptr, char *newstr, size_t i);
 void				*ft_append(void *addr, size_t new_size, size_t mem_size);
 int					ft_strchrn(const char *s, int c);
 int					ft_strcjoin(char **dst, char *src, char stop, int count);
 char				*ft_strconchr(const char *s, int (*f)(int),
-							int truth_value);
+						int truth_value);
 int					ft_strconchrlen(const char *s, int (*f)(int),
-							int truth_value);
+						int truth_value);
 int					ft_strconchrrlen(const char *s, int (*f)(int),
-							int truth_value);
+						int truth_value);
 char				*ft_strcondup(const char *src, int (*f)(int),
-							int truth_value);
+						int truth_value);
 char				*ft_strndup(const char *s, int n);
 int					ft_iswspace(int c);
 int					ft_atoi(const char *str);
@@ -122,7 +126,7 @@ int					ft_strchrlen(const char *s, int c);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strstrjoin(char **dst, char *src, char *stop, int count);
 void				*ft_realloc(void *addr, size_t old_size,
-								size_t size_incr, size_t mem_size);
+						size_t size_incr, size_t mem_size);
 char				*ft_strex(const char *s, char *p);
 long				ft_strtol(const char *s, char **endptr, int base);
 

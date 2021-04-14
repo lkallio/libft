@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   pf_ft_printf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 12:50:31 by lkallio           #+#    #+#             */
-/*   Updated: 2020/02/14 11:20:09 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 17:00:15 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,25 @@ static void	handle_type(t_pf *pf, va_list ap)
 		handle_longints(pf, ap);
 }
 
-static void	parse_options(t_pf *pf, int *i, va_list ap)
+static void	parse_options(t_pf *pf, int *i, va_list ap, int cont)
 {
-	int		cont;
 	int		ret;
 
-	cont = 0;
-	while ((ret = ft_nstrchr("-+ 0#", pf->format[(*i)])) != -1 && ++(*i))
+	if (!cont--)
+		return ;
+	while (ft_intass(&ret, ft_nstrchr("-+ 0#", pf->format[(*i)])) != -1
+		&& ++(*i))
 	{
 		cont = 1;
 		pf->dt.param |= 1 << ret;
 	}
-	if (((pf->format[(*i)] >= '0' && pf->format[(*i)] <= '9') ||
-	pf->format[(*i)] == '*') && (cont = 1))
-		pf->dt.width = pf->format[(*i)] == '*' && ++(*i) ? va_arg(ap, int) :
-			pf_atoi(pf, i, 0);
-	if (pf->format[(*i)] == '.' && ++(*i) && (cont = 1))
+	if (((pf->format[(*i)] >= '0' && pf->format[(*i)] <= '9')
+			|| pf->format[(*i)] == '*') && ft_intass(&cont, 1))
+		pf->dt.width = ft_itrn(pf->format[(*i)] == '*' && ++(*i),
+				va_arg(ap, int), pf_atoi(pf, i, 0));
+	if (pf->format[(*i)] == '.' && ++(*i) && ft_intass(&cont, 1))
 		pf->dt.prec = pf_atoi(pf, i, 0);
-	if ((ret = ft_nstrchr("hlLzjt", pf->format[(*i)])) != -1)
+	if (ft_intass(&ret, ft_nstrchr("hlLzjt", pf->format[(*i)])) != -1)
 	{
 		cont = 1;
 		pf->dt.length = pf->format[(*i)++];
@@ -59,17 +60,17 @@ static void	parse_options(t_pf *pf, int *i, va_list ap)
 			|| (pf->dt.length == 'l' && pf->format[(*i)] == 'l'))
 			pf->dt.length += pf->format[(*i)++];
 	}
-	cont ? parse_options(pf, i, ap) : 0;
+	parse_options(pf, i, ap, cont);
 }
 
 static void	parse_argument(t_pf *pf, int *i, va_list ap)
 {
-	int		ret;
+	int	ret;
 
 	++(*i);
-	parse_options(pf, i, ap);
-	if ((ret = ft_nstrchr("%ndicuoxXbBspfFgGeEaADOU", pf->format[(*i)])) != -1
-	&& ++(*i))
+	parse_options(pf, i, ap, 1);
+	if (ft_intass(&ret, ft_nstrchr("%ndicuoxXbBspfFgGeEaADOU",
+				pf->format[(*i)])) != -1 && ++(*i))
 	{
 		pf->dt.type = ret;
 		handle_type(pf, ap);
@@ -97,7 +98,7 @@ static int	parse_quoted(t_pf *pf, va_list ap)
 	return (1);
 }
 
-int			ft_printf(char const *format, ...)
+int	ft_printf(char const *format, ...)
 {
 	t_pf	pf;
 	va_list	ap;

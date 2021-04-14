@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 17:15:45 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/30 10:26:10 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 12:20:07 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static long	atoi_assistant(const char *str, long ret)
 	return (atoi_assistant(str + 1, (long)ret * 10 + *str - '0'));
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long	a;
 

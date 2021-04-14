@@ -6,15 +6,15 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 12:50:50 by lkallio           #+#    #+#             */
-/*   Updated: 2020/11/13 17:50:34 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 16:17:03 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nstrchr(const char *pool, char c)
+int	ft_nstrchr(const char *pool, char c)
 {
-	int		i;
+	int	i;
 
 	i = -1;
 	while (pool[++i])
@@ -23,7 +23,7 @@ int		ft_nstrchr(const char *pool, char c)
 	return (-1);
 }
 
-int		pf_atoi(t_pf *pf, int *i, int ret)
+int	pf_atoi(t_pf *pf, int *i, int ret)
 {
 	if (pf->format[(*i)] >= '0' && pf->format[(*i)] <= '9')
 	{

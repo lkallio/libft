@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stpncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 00:53:27 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/28 19:50:20 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 13:20:13 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 char	*ft_stpncpy(char *dst, const char *src, size_t len)
 {
-	int i;
+	int	i;
 
-	i = len ? -1 : 0;
+	i = -(!!len);
 	while (len--)
-		dst[++i] = *src ? *src++ : 0;
+	{
+		if (*src)
+			dst[++i] = *src++;
+		else
+			dst[++i] = 0;
+	}
 	return (dst + i);
 }

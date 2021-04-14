@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 02:27:32 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/31 17:25:08 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 12:37:38 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (lst)
 	{
-		if (!(l = f(lst)))
+		l = f(lst);
+		if (!l)
 			return (0);
-		if (lst->next && !(l->next = ft_lstmap(lst->next, f)))
+		if (lst->next)
+			l->next = ft_lstmap(lst->next, f);
+		if (lst->next && !l->next)
 		{
 			free(l);
 			return (0);

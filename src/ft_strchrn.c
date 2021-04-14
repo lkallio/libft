@@ -6,11 +6,13 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 14:53:22 by lkallio           #+#    #+#             */
-/*   Updated: 2020/11/13 14:53:24 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 16:52:18 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strchrn(const char *s, int c)
+int	ft_strchrn(const char *s, int c)
 {
-	return (!*s ? 0 : (*s == (char)c) + ft_strchrn(s + 1, c));
+	if (!*s)
+		return (0);
+	return ((*s == (char)c) + ft_strchrn(s + 1, c));
 }

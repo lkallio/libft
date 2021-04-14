@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchrlen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 21:20:30 by lkallio           #+#    #+#             */
-/*   Updated: 2019/11/05 21:20:32 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 13:22:01 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strchrlen(const char *s, int c)
+int	ft_strchrlen(const char *s, int c)
 {
 	if (*s == c || !*s)
 		return (0);

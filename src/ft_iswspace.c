@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iswspace.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 09:30:20 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/30 11:04:21 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 12:28:53 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_iswspace(int c)
+int	ft_iswspace(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n')
 		return (1);

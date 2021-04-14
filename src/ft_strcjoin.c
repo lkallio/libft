@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 17:56:09 by lkallio           #+#    #+#             */
-/*   Updated: 2019/11/12 18:53:12 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 13:30:34 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcjoin(char **dst, char *src, char stop, int count)
+int	ft_strcjoin(char **dst, char *src, char stop, int count)
 {
-	char		c;
-	int			ret;
+	char	c;
+	int		ret;
 
 	if (**dst)
 	{
@@ -31,9 +31,12 @@ int		ft_strcjoin(char **dst, char *src, char stop, int count)
 	else
 	{
 		*dst = (char *)malloc(count + 1);
+		if (!*dst)
+			return (-1);
 		dst[0][count] = 0;
 		return (*src == stop);
 	}
-	dst[0][count] = c;
+	if (ret != -1)
+		dst[0][count] = c;
 	return (ret);
 }

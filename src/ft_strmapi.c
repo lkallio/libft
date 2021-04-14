@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 02:00:54 by lkallio           #+#    #+#             */
-/*   Updated: 2019/11/01 15:23:45 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 14:11:22 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ static void	ft_string_assign(char **p, char const *s,
 	ft_string_assign(p, s + 1, f, i + 1);
 }
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *p;
+	char	*p;
 
-	if (!s || !f || !(p = (char *)malloc(ft_strlen(s) + 1)))
+	p = NULL;
+	if (s && f)
+		p = (char *)malloc(ft_strlen(s) + 1);
+	if (!p)
 		return (0);
 	ft_string_assign(&p, s, f, 0);
 	return (p);

@@ -6,16 +6,16 @@
 #    By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 13:09:35 by lkallio           #+#    #+#              #
-#    Updated: 2021/03/26 16:19:51 by lkallio          ###   ########.fr        #
+#    Updated: 2021/04/14 17:01:08 by lkallio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_realloc.c \
-		ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstdelone.c ft_lstnew.c \
-		ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
-		ft_memdel.c ft_memmove.c ft_memrchr.c ft_memset.c ft_putchar.c \
-		ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_append.c \
+		ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstdelone.c ft_lstnew.c ft_itrn.c \
+		ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_stern.c \
+		ft_memdel.c ft_memmove.c ft_memrchr.c ft_memset.c ft_putchar.c ft_strass.c \
+		ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_append.c ft_intass.c \
 		ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c ft_stpncpy.c ft_strchrn.c \
 		ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strpush.c \
 		ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strstrj.c \

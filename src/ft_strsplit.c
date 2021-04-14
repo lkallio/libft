@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 14:11:16 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/31 19:31:47 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 14:16:35 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ static int	ft_wordcount(char const *s, char c)
 	return ((*s != c && (*(s + 1) == c || !*(s + 1))) + ft_wordcount(s + 1, c));
 }
 
-char		**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char	**out;
 	int		wordcount;
 
 	wordcount = ft_wordcount(s, c);
-	if (!(out = (char **)malloc(sizeof(char *) * (wordcount + 1))))
+	out = (char **)malloc(sizeof(char *) * (wordcount + 1));
+	if (!out)
 		return (0);
 	out[wordcount] = 0;
 	if (!ft_word_fill(out, s, c))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 00:53:16 by lkallio           #+#    #+#             */
-/*   Updated: 2019/10/29 05:26:46 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/14 13:11:07 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memrchr(const void *s, int c, size_t n)
 {
-	unsigned char *area;
+	unsigned char	*area;
 
-	area = (unsigned char*)s;
+	area = (unsigned char *)s;
 	while (n--)
 		if (area[n] == (unsigned char)c)
 			return ((void *)area + n);
