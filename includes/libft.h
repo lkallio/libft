@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/04/14 17:09:56 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/15 15:05:05 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,6 @@ void				*ft_realloc(void *addr, size_t old_size,
 						size_t size_incr, size_t mem_size);
 char				*ft_strex(const char *s, char *p);
 long				ft_strtol(const char *s, char **endptr, int base);
+void				*ft_ptern(int true, void *p1, void *p2);
 
 #endif
