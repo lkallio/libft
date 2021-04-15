@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:12:24 by lkallio           #+#    #+#             */
-/*   Updated: 2021/04/14 14:22:50 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/04/15 15:30:46 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_strtol	get_vars(const char *s, int base)
 
 	while (ft_iswspace(*s))
 		s++;
-	sign = -(*s == '-');
+	sign = 1 - 2 * (*s == '-');
 	s += (*s == '+' || *s == '-');
 	if (*s == '0' && ft_tolower(s[1]) == 'x'
 		&& (base == 16 || !base))
