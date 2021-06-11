@@ -6,7 +6,7 @@
 #    By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 13:09:35 by lkallio           #+#    #+#              #
-#    Updated: 2021/04/15 15:05:17 by lkallio          ###   ########.fr        #
+#    Updated: 2021/06/09 22:51:24 by lkallio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_realloc.c 
 		ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strpush.c \
 		ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strstrj.c \
 		ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strtol.c \
-		ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
+		ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strtof.c \
 		ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 		ft_strtrim.c ft_tolower.c ft_toupper.c ft_lstiter.c ft_lstmap.c ft_filetostr.c \
 		ft_lstadd.c ft_lstdel.c ft_iswspace.c ft_strndup.c ft_strcdup.c ft_strex.c \
@@ -40,15 +40,15 @@ all: $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@[ -d obj ] || mkdir obj
-	@gcc $(FLAGS) -c $< -I $(INC) -o $@
+	@gcc -g $(FLAGS) -c $< -I $(INC) -o $@
 
 $(NAME): $(addprefix $(OBJDIR), $(OBJ))
-	ar rcs $(NAME) $?
+	@ar rcs $(NAME) $?
 
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:12:24 by lkallio           #+#    #+#             */
-/*   Updated: 2021/04/15 15:30:46 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/06/09 19:45:55 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ long	ft_strtol(const char *s, char **endptr, int base)
 {
 	register t_strtol	v;
 
+	if (!s)
+		return (0);
 	v = get_vars(s, base);
 	while (*v.s)
 	{

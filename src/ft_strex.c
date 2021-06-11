@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:51:26 by lkallio           #+#    #+#             */
-/*   Updated: 2021/04/14 14:02:56 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/06/09 23:12:22 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*ft_rstrex(const char *s, char *p, register int i)
 		return (0);
 	if (!*s && (!*p || *p == '*'))
 		return (make_ret(ept, i));
-	ret = ft_rstrex(s + 1, p + !(*p == '*' && p[1] != *s), i + 1);
+	ret = ft_rstrex(s + 1, p + !(*p == '*') + 2 * (*p == '*' && p[1] == s[0]), i + 1);
 	if (ret && i >= ept[0] && i <= ept[1])
 		ret[i - ept[0]] = *s;
 	if (!i)
