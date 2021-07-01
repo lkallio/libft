@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/06/09 22:51:12 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/06/23 20:14:45 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@
 # include <stdlib.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
+# include "vecft.h"
 # include <sys/errno.h>
+
+typedef union s_conv
+{
+	float	f;
+	uint32_t	i;
+}	t_conv;
 
 typedef struct s_list
 {
@@ -131,5 +138,8 @@ char				*ft_strex(const char *s, char *p);
 long				ft_strtol(const char *s, char **endptr, int base);
 void				*ft_ptern(int true, void *p1, void *p2);
 float	ft_strtof(const char *str);
+float	rsqrt(float n);
+float	fclampf(float val, float min, float max);
+float	to_rad(float degrees);
 
 #endif

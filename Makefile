@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+         #
+#    By: broccoli <broccoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 13:09:35 by lkallio           #+#    #+#              #
-#    Updated: 2021/06/09 22:51:24 by lkallio          ###   ########.fr        #
+#    Updated: 2021/07/01 14:36:12 by broccoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_realloc.c 
 		ft_strconchr.c ft_strconchrlen.c ft_strcondup.c ft_strconchrrlen.c \
 		ft_strchrlen.c ft_strlcpy.c ft_strnjoin.c ft_strcjoin.c get_next_line.c \
 		pf_dbl_data.c pf_ft_printf.c pf_handle_buffer.c pf_handle_double.c \
-		pf_handle_ints.c pf_handle_n_str.c pf_utils.c pf_write_double.c pf_write_ints.c
+		pf_handle_ints.c pf_handle_n_str.c pf_utils.c pf_write_double.c pf_write_ints.c \
+		fclampf.c ft_mat_2.c ft_mat.c ft_vec2.c ft_vec3_2.c ft_vec3_3.c ft_vec3_3.c ft_vec3_4.c \
+		ft_vec3.c ft_vec4.c rsqrt.c to_rad.c
 FLAGS = -Wall -Wextra -Werror
 SRCDIR = src/
 OBJ = $(SRC:.c=.o)
@@ -40,7 +42,7 @@ all: $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@[ -d obj ] || mkdir obj
-	@gcc -g $(FLAGS) -c $< -I $(INC) -o $@
+	@gcc $(FLAGS) -c $< -I $(INC) -o $@
 
 $(NAME): $(addprefix $(OBJDIR), $(OBJ))
 	@ar rcs $(NAME) $?
