@@ -1,5 +1,5 @@
 #ifndef VECFT_H
-#define VECFT_H
+# define VECFT_H
 
 # include <math.h>
 
@@ -11,7 +11,7 @@ typedef struct s_vec4
 	float		w;
 }	t_vec4;
 
-typedef struct	s_vec3
+typedef struct s_vec3
 {
 	float		x;
 	float		y;
@@ -20,11 +20,11 @@ typedef struct	s_vec3
 
 typedef struct s_vec2
 {
-	float x;
-	float y;
+	float	x;
+	float	y;
 }	t_vec2;
 
-typedef struct	s_mat
+typedef struct s_mat
 {
 	t_vec4	m[4];
 }	t_mat;

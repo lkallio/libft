@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: broccoli <broccoli@student.42.fr>          +#+  +:+       +#+         #
+#    By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 13:09:35 by lkallio           #+#    #+#              #
-#    Updated: 2021/07/01 14:36:12 by broccoli         ###   ########.fr        #
+#    Updated: 2021/07/09 13:48:33 by lkallio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_realloc.c 
 		pf_dbl_data.c pf_ft_printf.c pf_handle_buffer.c pf_handle_double.c \
 		pf_handle_ints.c pf_handle_n_str.c pf_utils.c pf_write_double.c pf_write_ints.c \
 		fclampf.c ft_mat_2.c ft_mat.c ft_vec2.c ft_vec3_2.c ft_vec3_3.c ft_vec3_3.c ft_vec3_4.c \
-		ft_vec3.c ft_vec4.c rsqrt.c to_rad.c
+		ft_vec3.c ft_vec4.c rsqrt.c to_rad.c is_numeric.c get_next_line_str.c
 FLAGS = -Wall -Wextra -Werror
 SRCDIR = src/
 OBJ = $(SRC:.c=.o)

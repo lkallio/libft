@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   is_numeric.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 00:54:19 by lkallio           #+#    #+#             */
-/*   Updated: 2021/07/12 12:06:41 by lkallio          ###   ########.fr       */
+/*   Created: 2021/07/07 20:08:06 by lkallio           #+#    #+#             */
+/*   Updated: 2021/07/12 12:07:31 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s)
+int	is_numeric(char *s)
 {
-	int		i;
-	char	*ret;
-
 	if (!s)
 		return (0);
-	i = -1;
-	while (ft_iswspace(s[++i]))
-		;
-	ret = ft_strndup(s + i, ft_strconchrrlen(s + i, &ft_iswspace, 1) + 1);
-	free(s);
-	return (ret);
+	while (*s && *s >= '0' && *s <= '9')
+		s++;
+	return (!*s);
 }

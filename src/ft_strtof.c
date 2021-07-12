@@ -1,9 +1,21 @@
 #include "libft.h"
 
+static void	ft_strtof_inner_loop(float *res, float *div,
+	float num, int after_decimal)
+{
+	if (!after_decimal)
+		*res = *res * 10.0f + num;
+	else
+	{
+		*res += num / *div;
+		*div *= 10.0f;
+	}
+}
+
 float	ft_strtof(const char *str)
 {
-	int	i;
-	int	after_decimal;
+	int		i;
+	int		after_decimal;
 	float	res;
 	float	div;
 
@@ -19,13 +31,8 @@ float	ft_strtof(const char *str)
 			after_decimal = 1;
 		if (str[i] < '0' || str[i] > '9')
 			return (res);
-		if (!after_decimal)
-			res = res * 10.0f + (float)(str[i] - '0');
-		else
-		{
-			res += (float)(str[i] - '0') / div;
-			div *= 10.0f;
-		}
+		ft_strtof_inner_loop(&res, &div,
+			(float)(str[i] - '0'), after_decimal);
 	}
 	return (res);
 }

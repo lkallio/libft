@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/06/23 20:14:45 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/07/12 12:16:02 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # include "vecft.h"
 # include <sys/errno.h>
 
-typedef union s_conv
+typedef union u_conv
 {
-	float	f;
+	float		f;
 	uint32_t	i;
 }	t_conv;
 
@@ -125,7 +125,7 @@ char				*ft_strrchr(const char *str, int c);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strstr(const char *hs, const char *nl);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*ft_strtrim(char const *s);
+char				*ft_strtrim(char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_strcdup(char **dst, const char *src, int c, int i);
@@ -137,9 +137,10 @@ void				*ft_realloc(void *addr, size_t old_size,
 char				*ft_strex(const char *s, char *p);
 long				ft_strtol(const char *s, char **endptr, int base);
 void				*ft_ptern(int true, void *p1, void *p2);
-float	ft_strtof(const char *str);
-float	rsqrt(float n);
-float	fclampf(float val, float min, float max);
-float	to_rad(float degrees);
+float				ft_strtof(const char *str);
+float				rsqrt(float n);
+float				fclampf(float val, float min, float max);
+float				to_rad(float degrees);
+int					get_next_line_str(char **str, char **line);
 
 #endif

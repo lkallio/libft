@@ -6,7 +6,7 @@
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:51:26 by lkallio           #+#    #+#             */
-/*   Updated: 2021/06/09 23:12:22 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/07/01 17:31:34 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,29 @@ static char	*make_ret(int *ept, register int i)
 	return (ret);
 }
 
+static char	skip_paran(char *p)
+{
+	p++;
+	while (*p == '(' || *p == ')')
+		p++;
+	return (*p);
+}
+
 static char	*ft_rstrex(const char *s, char *p, register int i)
 {
 	static int	ept[2];
 	char		*ret;
 
-	if (*p == '(' && *++p)
+	if (*p == '(' && ++p)
 		ept[0] = i;
-	if (*p == ')' && *++p)
+	if (*p == ')' && ++p)
 		ept[1] = i;
 	if (*s != *p && *p != '*')
 		return (0);
 	if (!*s && (!*p || *p == '*'))
 		return (make_ret(ept, i));
-	ret = ft_rstrex(s + 1, p + !(*p == '*') + 2 * (*p == '*' && p[1] == s[0]), i + 1);
-	if (ret && i >= ept[0] && i <= ept[1])
+	ret = ft_rstrex(s + 1, p + (*p != '*' || skip_paran(p) == s[1]), i + 1);
+	if (ret && i >= ept[0] && i < ept[1])
 		ret[i - ept[0]] = *s;
 	if (!i)
 	{

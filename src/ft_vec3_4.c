@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_vec3_4.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/07 20:08:14 by lkallio           #+#    #+#             */
+/*   Updated: 2021/07/12 12:07:13 by lkallio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vecft.h"
 #include "libft.h"
 
@@ -22,8 +34,8 @@ t_vec3	vfunc2(t_vec3 d, t_vec3 s, float (*f)(float, float))
 t_vec3	vec3clamp(t_vec3 vec, float min, float max)
 {
 	return (vec3(
-		fclampf(vec.x, min, max),
-		fclampf(vec.y, min, max),
-		fclampf(vec.z, min, max)
+			fclampf(vec.x, min, max),
+			fclampf(vec.y, min, max),
+			fclampf(vec.z, min, max)
 		));
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   get_next_line_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 00:54:19 by lkallio           #+#    #+#             */
-/*   Updated: 2021/07/12 12:06:41 by lkallio          ###   ########.fr       */
+/*   Created: 2021/07/09 13:38:52 by lkallio           #+#    #+#             */
+/*   Updated: 2021/07/11 17:30:29 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s)
+int	get_next_line_str(char **str, char **line)
 {
-	int		i;
-	char	*ret;
-
-	if (!s)
+	if (*line != NULL)
+		free(*line);
+	if (*str == NULL)
 		return (0);
-	i = -1;
-	while (ft_iswspace(s[++i]))
-		;
-	ret = ft_strndup(s + i, ft_strconchrrlen(s + i, &ft_iswspace, 1) + 1);
-	free(s);
-	return (ret);
+	if (ft_strcdup(line, *str, '\n', 0) == -1)
+		return (-1);
+	*str = ft_strchr(*str, '\n');
+	if (*str)
+		*str += 1;
+	return (1);
 }

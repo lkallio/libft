@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_vec3.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/07 20:08:11 by lkallio           #+#    #+#             */
+/*   Updated: 2021/07/12 12:06:53 by lkallio          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "vecft.h"
 
@@ -18,7 +30,7 @@ t_vec3	vnormalize(t_vec3 in)
 	});
 }
 
-t_vec3 vcross(t_vec3 a, t_vec3 b)
+t_vec3	vcross(t_vec3 a, t_vec3 b)
 {
 	return ((t_vec3){
 		a.y * b.z - a.z * b.y,
@@ -27,7 +39,7 @@ t_vec3 vcross(t_vec3 a, t_vec3 b)
 	});
 }
 
-t_vec3 vadd(t_vec3 dst, t_vec3 src)
+t_vec3	vadd(t_vec3 dst, t_vec3 src)
 {
 	return ((t_vec3){
 		.x = dst.x + src.x,
@@ -36,7 +48,7 @@ t_vec3 vadd(t_vec3 dst, t_vec3 src)
 	});
 }
 
-t_vec3 vsub(t_vec3 dst, t_vec3 src)
+t_vec3	vsub(t_vec3 dst, t_vec3 src)
 {
 	return ((t_vec3){
 		.x = dst.x - src.x,
