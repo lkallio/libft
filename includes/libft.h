@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkallio <lkallio@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: lkallio <lkallio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 06:25:28 by lkallio           #+#    #+#             */
-/*   Updated: 2021/07/12 12:16:02 by lkallio          ###   ########.fr       */
+/*   Updated: 2021/09/16 20:09:58 by lkallio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,30 @@ typedef struct s_strtol
 	int				base;
 }					t_strtol;
 
+typedef struct s_array
+{
+	void	*data;
+	int		size;
+	int		mem_size;
+	int		last_index;
+}	t_array;
+
+typedef struct s_stri
+{
+	char	*s;
+	int		i;
+}	t_stri;
+
+typedef unsigned char t_uchar;
+
 # define FT_LONGMAX		((unsigned long)0x7FFFFFFF)
 
+int    				stri_match_pattern(t_stri *si, char *pattern, char *haystack);
+int    				stri_atoi(t_stri *si);
+void    			stri_seekc(t_stri *si, int c, int skip);
+void 				stri_skip_wspace(t_stri *s);
+void   				parse_inner_quote(t_stri *file, t_uchar *fill, size_t max_len);
+int     			stri_match(t_stri *si, char *word);
 char				*ft_strass(char **dst, char *src);
 char				*ft_stern(int true, char *s1, char *s2);
 int					ft_intass(int *ass, int dst);
@@ -142,5 +164,9 @@ float				rsqrt(float n);
 float				fclampf(float val, float min, float max);
 float				to_rad(float degrees);
 int					get_next_line_str(char **str, char **line);
+void   				*arr_get(t_array *arr, int i);
+void   				arr_set(t_array *arr, int i, int n, void *new_data);
+void   				arr_append(t_array *arr, void *new_data);
+void 				arr_new(t_array *arr, int mem_size);
 
 #endif
